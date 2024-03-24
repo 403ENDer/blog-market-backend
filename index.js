@@ -33,10 +33,9 @@ app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
 app.use(
   cors({
-    origin:
-      "https://66006b0489da710b71192ea6--meek-smakager-fc3901.netlify.app",
+    origin: "https://blog-market1106.netlify.app",
     methods: "GET,PUT,POST,DELETE",
-    credentials: true, // Include cookies in CORS requests if applicable
+    credentials: true,
   })
 );
 
