@@ -9,7 +9,6 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
-const cors = require("cors");
 const commentRoute = require("./routes/comments");
 
 //database
