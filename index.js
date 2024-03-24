@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
+const cors = require("cors");
 const commentRoute = require("./routes/comments");
 
 //database
@@ -31,6 +32,14 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
+app.use(
+  cors({
+    origin:
+      "https://66006b0489da710b71192ea6--meek-smakager-fc3901.netlify.app",
+    methods: "GET,PUT,POST,DELETE",
+    credentials: true, // Include cookies in CORS requests if applicable
+  })
+);
 
 //image upload
 const storage = multer.diskStorage({
