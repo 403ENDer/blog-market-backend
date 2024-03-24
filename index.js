@@ -33,7 +33,7 @@ app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
 app.use(
   cors({
-    origin: "https://blog-market1106.netlify.app",
+    origin: "https://blog-master1106.netlify.app",
     methods: "GET,PUT,POST,DELETE",
     credentials: true,
   })
