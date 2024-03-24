@@ -25,19 +25,17 @@ const connectDB = async () => {
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-app.use(cors({ origin: process.env.ORIGIN, credentials: true }));
 app.use(cookieParser());
+app.use(
+  cors({
+    origin: process.env.ORIGIN || "https://blog-master1106.netlify.app",
+    credentials: true,
+  })
+);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
-app.use(
-  cors({
-    origin: "https://blog-master1106.netlify.app",
-    methods: "GET,PUT,POST,DELETE",
-    credentials: true,
-  })
-);
 
 //image upload
 const storage = multer.diskStorage({
