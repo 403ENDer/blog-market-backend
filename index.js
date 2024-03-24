@@ -38,6 +38,20 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/comments", commentRoute);
 
+app.use(function (req, res, next) {
+  // Allow requests from a specific origin
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://blog-master1106.netlify.app"
+  );
+  res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization"
+  );
+  next();
+});
+
 //image upload
 const storage = multer.diskStorage({
   destination: (req, file, fn) => {
