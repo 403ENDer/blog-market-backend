@@ -21,18 +21,13 @@ const connectDB = async () => {
   }
 };
 
+//adding cors
+app.use(cors());
 //middlewares
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: process.env.ORIGIN || "https://blog-master1106.netlify.app",
-    methods: "GET,PUT,POST,DELETE",
-    credentials: true,
-  })
-);
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
