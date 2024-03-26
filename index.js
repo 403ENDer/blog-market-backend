@@ -22,7 +22,7 @@ const connectDB = async () => {
 };
 
 //adding cors
-app.use(cors({ origin: "https://blog-market-backend.onrender.com", credentials: true }));
+app.use(cors({ origin: "https://blog-master1106.netlify.app", credentials: true }));
 //middlewares
 dotenv.config();
 app.use(express.json());
