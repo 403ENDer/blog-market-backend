@@ -22,7 +22,7 @@ const connectDB = async () => {
 };
 
 //adding cors
-app.use(cors());
+app.use(cors({ origin: "https://blog-market-backend.onrender.com", credentials: true }));
 //middlewares
 dotenv.config();
 app.use(express.json());
