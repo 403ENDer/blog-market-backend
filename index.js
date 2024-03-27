@@ -22,7 +22,6 @@ const connectDB = async () => {
 };
 
 //adding cors
-app.use(cors({ origin: "https://blog-master1106.netlify.app", credentials: true,methods: '*',}));
 app.use(
   cors({
     origin: ["https://blog-master1106.netlify.app", "http://localhost:5173"],
