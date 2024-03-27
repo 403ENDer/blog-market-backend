@@ -23,6 +23,15 @@ const connectDB = async () => {
 
 //adding cors
 app.use(cors({ origin: "https://blog-master1106.netlify.app", credentials: true,methods: '*',}));
+app.use((req, res, next) => {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://blog-master1106.netlify.app"
+  );
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 //middlewares
 dotenv.config();
 app.use(express.json());
